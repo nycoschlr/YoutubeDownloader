@@ -1,0 +1,16 @@
+# Download a YouTube video on your computer using an URL.
+
+from pytube import YouTube
+
+link = input("enter link:")
+yt = YouTube(link)
+
+print("Title:", yt.title)
+print("Length:", yt.length)
+print("Views:", yt.views)
+print("Rating:", yt.rating)
+
+ys = yt.streams.get_highest_resolution()
+print("Dowloading...")
+ys.download('the file directory that you want')
+print("Download completed")
